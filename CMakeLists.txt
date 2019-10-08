@@ -6,7 +6,7 @@ set( EXECUTABLE_OUTPUT_PATH ${Boost_vs_Eigen_SOURCE_DIR}/bin )
 
 #Include Boost
 include( FindBoost )
-find_package( Boost 1.36.0 REQUIRED )
+find_package( Boost 1.36.0 REQUIRED signals )
 link_directories( ${Boost_LIBRARY_DIRS} )
 include_directories( ${Boost_INCLUDE_DIRS} )
 
