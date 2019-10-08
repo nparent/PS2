@@ -1,0 +1,186 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd981 failed with the following output:
+Change Dir: /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp
+
+Run Build Command:/opt/rh/devtoolset-8/root/usr/bin/gmake "cmTryCompileExec2538052961/fast"
+gmake[3]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/opt/rh/devtoolset-8/root/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2538052961.dir/build.make CMakeFiles/cmTryCompileExec2538052961.dir/build
+gmake[4]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2538052961.dir/src.cxx.o
+/opt/rh/devtoolset-8/root/usr/bin/c++    -fexceptions -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_wd981 -Werror   -wd981 -o CMakeFiles/cmTryCompileExec2538052961.dir/src.cxx.o -c /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-wd981'
+gmake[4]: *** [CMakeFiles/cmTryCompileExec2538052961.dir/build.make:62: CMakeFiles/cmTryCompileExec2538052961.dir/src.cxx.o] Error 1
+gmake[4]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:117: cmTryCompileExec2538052961/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd2304 failed with the following output:
+Change Dir: /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp
+
+Run Build Command:/opt/rh/devtoolset-8/root/usr/bin/gmake "cmTryCompileExec2802616950/fast"
+gmake[3]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/opt/rh/devtoolset-8/root/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2802616950.dir/build.make CMakeFiles/cmTryCompileExec2802616950.dir/build
+gmake[4]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2802616950.dir/src.cxx.o
+/opt/rh/devtoolset-8/root/usr/bin/c++    -fexceptions -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_wd2304 -Werror   -wd2304 -o CMakeFiles/cmTryCompileExec2802616950.dir/src.cxx.o -c /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-wd2304'
+gmake[4]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[4]: *** [CMakeFiles/cmTryCompileExec2802616950.dir/build.make:62: CMakeFiles/cmTryCompileExec2802616950.dir/src.cxx.o] Error 1
+gmake[3]: *** [Makefile:117: cmTryCompileExec2802616950/fast] Error 2
+gmake[3]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_STRICTANSI failed with the following output:
+Change Dir: /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp
+
+Run Build Command:/opt/rh/devtoolset-8/root/usr/bin/gmake "cmTryCompileExec2633708404/fast"
+gmake[3]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/opt/rh/devtoolset-8/root/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2633708404.dir/build.make CMakeFiles/cmTryCompileExec2633708404.dir/build
+gmake[4]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2633708404.dir/src.cxx.o
+/opt/rh/devtoolset-8/root/usr/bin/c++    -fexceptions -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_STRICTANSI -Werror   -strict-ansi -o CMakeFiles/cmTryCompileExec2633708404.dir/src.cxx.o -c /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-strict-ansi'; did you mean '-fstrict-enums'?
+gmake[4]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[4]: *** [CMakeFiles/cmTryCompileExec2633708404.dir/build.make:62: CMakeFiles/cmTryCompileExec2633708404.dir/src.cxx.o] Error 1
+gmake[3]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:117: cmTryCompileExec2633708404/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Qunusedarguments failed with the following output:
+Change Dir: /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp
+
+Run Build Command:/opt/rh/devtoolset-8/root/usr/bin/gmake "cmTryCompileExec679572975/fast"
+gmake[3]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/opt/rh/devtoolset-8/root/usr/bin/gmake -f CMakeFiles/cmTryCompileExec679572975.dir/build.make CMakeFiles/cmTryCompileExec679572975.dir/build
+gmake[4]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec679572975.dir/src.cxx.o
+/opt/rh/devtoolset-8/root/usr/bin/c++    -fexceptions -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_Qunusedarguments -Werror   -Qunused-arguments -o CMakeFiles/cmTryCompileExec679572975.dir/src.cxx.o -c /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Qunused-arguments'; did you mean '-Wunused-parameter'?
+gmake[4]: *** [CMakeFiles/cmTryCompileExec679572975.dir/build.make:62: CMakeFiles/cmTryCompileExec679572975.dir/src.cxx.o] Error 1
+gmake[4]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:117: cmTryCompileExec679572975/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp
+
+Run Build Command:/opt/rh/devtoolset-8/root/usr/bin/gmake "cmTryCompileExec3138469681/fast"
+gmake[3]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/opt/rh/devtoolset-8/root/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3138469681.dir/build.make CMakeFiles/cmTryCompileExec3138469681.dir/build
+gmake[4]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3138469681.dir/CheckSymbolExists.cxx.o
+/opt/rh/devtoolset-8/root/usr/bin/c++    -fexceptions -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -ansi -O1 -g1    -o CMakeFiles/cmTryCompileExec3138469681.dir/CheckSymbolExists.cxx.o -c /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^~~~~~~~
+/user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘Q_WS_X11’
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^~~~~~~~
+                   Q_WS_X11
+gmake[4]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[4]: *** [CMakeFiles/cmTryCompileExec3138469681.dir/build.make:62: CMakeFiles/cmTryCompileExec3138469681.dir/CheckSymbolExists.cxx.o] Error 1
+gmake[3]: *** [Makefile:117: cmTryCompileExec3138469681/fast] Error 2
+gmake[3]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+
+File /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp
+
+Run Build Command:/opt/rh/devtoolset-8/root/usr/bin/gmake "cmTryCompileExec1363174379/fast"
+gmake[3]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/opt/rh/devtoolset-8/root/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1363174379.dir/build.make CMakeFiles/cmTryCompileExec1363174379.dir/build
+gmake[4]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1363174379.dir/CheckSymbolExists.cxx.o
+/opt/rh/devtoolset-8/root/usr/bin/c++    -fexceptions -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -ansi -O1 -g1    -o CMakeFiles/cmTryCompileExec1363174379.dir/CheckSymbolExists.cxx.o -c /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^~~~~~~~
+/user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘Q_WS_X11’
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^~~~~~~~
+                   Q_WS_X11
+gmake[4]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[4]: *** [CMakeFiles/cmTryCompileExec1363174379.dir/build.make:62: CMakeFiles/cmTryCompileExec1363174379.dir/CheckSymbolExists.cxx.o] Error 1
+gmake[3]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:117: cmTryCompileExec1363174379/fast] Error 2
+
+File /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp
+
+Run Build Command:/opt/rh/devtoolset-8/root/usr/bin/gmake "cmTryCompileExec3565257847/fast"
+gmake[3]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/opt/rh/devtoolset-8/root/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3565257847.dir/build.make CMakeFiles/cmTryCompileExec3565257847.dir/build
+gmake[4]: Entering directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3565257847.dir/CheckSymbolExists.cxx.o
+/opt/rh/devtoolset-8/root/usr/bin/c++    -fexceptions -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -ansi -O1 -g1    -o CMakeFiles/cmTryCompileExec3565257847.dir/CheckSymbolExists.cxx.o -c /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^~~~~~~~
+/user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: note: suggested alternative: ‘Q_WS_X11’
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^~~~~~~~
+                   Q_WS_X11
+gmake[4]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[4]: *** [CMakeFiles/cmTryCompileExec3565257847.dir/build.make:62: CMakeFiles/cmTryCompileExec3565257847.dir/CheckSymbolExists.cxx.o] Error 1
+gmake[3]: Leaving directory '/user/9/.base/parentn/home/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:117: cmTryCompileExec3565257847/fast] Error 2
+
+File /user/9/parentn/PS2/build/Eigen-prefix/src/Eigen-build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
