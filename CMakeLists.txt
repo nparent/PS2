@@ -25,7 +25,7 @@ include ( ExternalProject )
 include_directories( ${Boost_vs_Eigen_SOURCE_DIR}/eigen )
 
 #Executable configuration
-file( GLOB_RECURSE sources src/* inc/* src/test/*)
+file( GLOB_RECURSE sources src/* inc/* test/*)
 
 add_executable( exe ${sources} )
 
