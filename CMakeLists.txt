@@ -12,7 +12,7 @@ include_directories( ${Boost_INCLUDE_DIRS} )
 
 #Include Eigen
 # include( FindEigen )
-# find_package( Eigen3 REQUIRED )
+find_package( Eigen3 REQUIRED )
 # include_directories( ${EIGEN3_INCLUDE_DIR} )
 include ( ExternalProject )
   ExternalProject_Add(
@@ -25,7 +25,7 @@ include ( ExternalProject )
 include_directories( ${Boost_vs_Eigen_SOURCE_DIR}/eigen )
 
 #Executable configuration
-file( GLOB_RECURSE sources src/* inc/*)
+file( GLOB_RECURSE sources src/* inc/* src/test/*)
 
 add_executable( exe ${sources} )
 
