@@ -6,13 +6,13 @@ set( EXECUTABLE_OUTPUT_PATH ${Boost_vs_Eigen_SOURCE_DIR}/bin )
 
 #Include Boost
 include( FindBoost )
-find_package( Boost 1.36.0 REQUIRED signals )
+find_package( Boost 1.36.0 REQUIRED signals timer system )
 link_directories( ${Boost_LIBRARY_DIRS} )
 include_directories( ${Boost_INCLUDE_DIRS} )
 
 #Include Eigen
 #include(FindEigen)
-find_package( Eigen3 REQUIRED )
+# find_package( Eigen3 REQUIRED )
 #include_directories(${EIGEN3_INCLUDE_DIR})
 include ( ExternalProject )
   ExternalProject_Add(
