@@ -11,23 +11,29 @@ link_directories( ${Boost_LIBRARY_DIRS} )
 include_directories( ${Boost_INCLUDE_DIRS} )
 
 #Include Eigen
-# include( FindEigen )
+#include(FindEigen)
 find_package( Eigen3 REQUIRED )
-# include_directories( ${EIGEN3_INCLUDE_DIR} )
+#include_directories(${EIGEN3_INCLUDE_DIR})
 include ( ExternalProject )
   ExternalProject_Add(
     Eigen
-      # we suppose here that your project is named TP
-      # Library Eigen3 is stored in the sub - folder eigen
+#we suppose here that your project is named TP
+#Library Eigen3 is stored in the sub - folder eigen
     SOURCE_DIR  ${Boost_vs_Eigen_SOURCE_DIR}/eigen
     INSTALL_COMMAND echo " Skipping install "
   )
 include_directories( ${Boost_vs_Eigen_SOURCE_DIR}/eigen )
 
 #Executable configuration
-file( GLOB_RECURSE sources src/* inc/* test/*)
+file( GLOB_RECURSE sources src/* inc/*)
 
 add_executable( exe ${sources} )
 
 #Links edition
 target_link_libraries( exe ${Boost_LIBRARIES} )
+
+
+#BOOST tests
+enable_testing()
+add_subdirectory(test)
+add_test(NAME test_eigen3 COMMAND Test)
