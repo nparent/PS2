@@ -36,4 +36,4 @@ target_link_libraries( exe ${Boost_LIBRARIES} )
 #BOOST tests
 enable_testing()
 add_subdirectory(test)
-add_test(NAME test_eigen3 COMMAND Test)
+add_test(NAME test_eigen3 COMMAND test)
