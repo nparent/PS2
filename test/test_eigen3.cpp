@@ -32,3 +32,10 @@ void solver(int size, int it = 10){
         res = m.colPivHouseholderQr().solve(v);
     }
 }
+
+
+BOOST_AUTO_TEST_CASE(test_eigen3) {
+    VectorXi v(5);
+    v << 1,2,3,4,5;
+    BOOST_CHECK_EQUAL(v.sum(), 15);
+}
