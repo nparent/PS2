@@ -8,10 +8,12 @@ list( APPEND libraries_boost
      )
 # or use ${Boost_LIBRARIES} filled by find_package(boost)
 
+add_executable(test_eigen3 test_eigen3.cpp)
+target_link_libraries ( test_eigen3 ${libraries_boost} )
 
 add_executable(test_eigen_Mxv test_eigen_Mxv.cpp)
-# link edition
 target_link_libraries ( test_eigen_Mxv ${libraries_boost} )
+
 
 add_executable(test_eigen_solve_system test_eigen_solve_system.cpp)
 target_link_libraries ( test_eigen_solve_system
