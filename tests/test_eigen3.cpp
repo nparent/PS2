@@ -16,9 +16,9 @@ using namespace boost::timer;
 void matrixMultiply(int size, int it = 10){
     MatrixXd m, m2, res;
     for(int i = 0; i < it; i++){
-        auto_cpu_timer t(3);
         m = MatrixXd::Random(size,size);
         m2 = MatrixXd::Random(size,size);
+        auto_cpu_timer t(3);
         res = m*m2;
     }
 }
@@ -26,7 +26,6 @@ void matrixMultiply(int size, int it = 10){
 void solver(int size, int it = 10){
     MatrixXd m, v, res;
     for(int i = 0; i < it; i++){
-        auto_cpu_timer t(3);
         m = MatrixXd::Random(size,size);
         v = MatrixXd::Random(size,1);
         res = m.colPivHouseholderQr().solve(v);
