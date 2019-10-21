@@ -1,9 +1,10 @@
-// #define BOOST_TEST_MODULE test_eigen_Mxv
+#define BOOST_TEST_MODULE test_boost_Mxv
 
 #include <iostream>
 #include <Eigen/Dense>
 #include <boost/timer/timer.hpp>
 #include <boost/test/unit_test.hpp>
+
 #include <boost/numeric/ublas/matrix.hpp>
 #include <boost/numeric/ublas/io.hpp>
 
@@ -14,29 +15,21 @@ using namespace Eigen;
 using namespace boost::numeric::ublas;
 
 
-int main(int argc, char *argv[]) {
-  // zero_matrix<int> M(10,10);
-  // matrix<double> m = CreateRandomMatrix(10,10);
-  MatrixXd M(10,10);
-  M =  MatrixXd::Random(10,10);
-  matrix<double> m;
-  m = MatrixFromEigen(M);
-  cout<<m;
-  return 0;
+BOOST_AUTO_TEST_CASE(test_boost)
+{
+  int size = 2;
+  MatrixXd m = MatrixXd::Random(size,size);
+  MatrixXd v = MatrixXd::Zero(size,1);
+  // MatrixXd mxv(size,1);
+  matrix<double> MxV(size,1);
+  matrix<double> M = MatrixFromEigen(m);
+  matrix<double> V = MatrixFromEigen(v);
+  //
+  MxV = prod(M,V);
+  BOOST_CHECK_EQUAL(MxV(0,0), MxV(0,0));
+  // first column
+  V(0,0)=1;
+  MxV = prod(M,V);
+  BOOST_CHECK_EQUAL(MxV(0,0),M(0,0));
+  BOOST_CHECK_EQUAL(MxV(1,0),M(1,0));
 }
-//
-// BOOST_AUTO_TEST_CASE(first_column)
-// {
-//   MatrixXd a = MatrixXd::Random(2,2);
-//   MatrixXd b = MatrixXd::Zero(2,1);
-//   MatrixXd c(2,1);
-//   boost::matrix M(10,10);
-//   cout<<M;
-//   // c = a*b;
-//   // BOOST_CHECK_EQUAL(c(0,0), 0);
-//   // b(0,0)=1;
-//   // // first column
-//   // c = a*b;
-//   // BOOST_CHECK_EQUAL(a(0,0),c(0,0));
-//   // BOOST_CHECK_EQUAL(a(1,0),c(1,0));
-// }

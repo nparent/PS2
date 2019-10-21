@@ -1,4 +1,4 @@
-#ifned TOOLS
+#ifndef TOOLS
 #define TOOLS
 
 #include <iostream>
