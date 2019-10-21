@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 project(Boost_vs_Eigen)
 set( EXECUTABLE_OUTPUT_PATH ${Boost_vs_Eigen_SOURCE_DIR}/bin )
 
+add_compile_options(-g -O2)
 
 ###### ADD EIGEN #####
 include(ExternalProject)
@@ -23,6 +24,7 @@ find_package( Boost
   COMPONENTS
     system filesystem unit_test_framework
   REQUIRED
+    timer signals
 )
 include_directories(${Boost_INCLUDE_DIRS})
 
@@ -33,4 +35,4 @@ enable_testing()
 add_test(NAME test_eigen_Mxv COMMAND test_eigen_Mxv)
 add_test(NAME test_eigen_solve_system COMMAND test_eigen_solve_system)
 add_test(NAME test_boost_Mxv COMMAND test_boost_Mxv)
-add_test(NAME test_boost_solve_system COMMAND test_boost_solve_system)
+# add_test(NAME test_boost_solve_system COMMAND test_boost_solve_system)

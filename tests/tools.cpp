@@ -41,4 +41,18 @@ matrix<double> MatrixFromEigen(MatrixXd M)
   return m;
 }
 
+// vector<double> VectorFromEigen(MatrixXd V)
+// {
+//   int n_rows = V.rows();
+//   boost::numeric::ublas::vector<double> v(n_rows);
+//   for (std::size_t row=0; row!=n_rows; ++row)
+//   {
+//     for (std::size_t col=0; col!=n_cols; ++col)
+//     {
+//       m(row,col) = M(row,col);
+//     }
+//   }
+//   return m;
+// }
+
 #endif
