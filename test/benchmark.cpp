@@ -24,13 +24,31 @@ void Create_plotfile(string path, ofstream &plotfile) {
 BOOST_AUTO_TEST_CASE(benchmark) {
   // plotfile creation
   ofstream plotfile;
-  Create_plotfile("test/plotfile.dat", plotfile);
+  Create_plotfile("test/solveur.dat", plotfile);
   plotfile.clear();
-  plotfile << "# size it time" << endl << endl;
+  plotfile << "# size time" << endl << endl;
 
   // profiling
-  cpu_timer t;
-  solver(10, 10);
-  cpu_times times = t.elapsed();
-  cout << times.wall << endl;
+  for( int i = 100; i < 500; i+=20){
+    cpu_timer t;  
+    solver(i, 1);   
+    cpu_times times = t.elapsed() ;
+    cout << times.wall << endl;   
+    plotfile << i << " " << times.wall << endl;
+  }
+
+    // plotfile creation
+  ofstream plotfile2;
+  Create_plotfile("test/multiply.dat", plotfile2);
+  plotfile2.clear();
+  plotfile2 << "# size time" << endl << endl;
+
+  // profiling
+  for( int i = 100; i < 500; i+=20){
+    cpu_timer t;  
+    matrixMultiply(i, 1);   
+    cpu_times times = t.elapsed() ;
+    cout << times.wall << endl;   
+    plotfile2 << i << " " << times.wall << endl;
+  }
 }
