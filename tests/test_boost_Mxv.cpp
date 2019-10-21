@@ -15,7 +15,7 @@ using namespace Eigen;
 using namespace boost::numeric::ublas;
 
 
-BOOST_AUTO_TEST_CASE(test_boost)
+BOOST_AUTO_TEST_CASE(test_boost_Mxv)
 {
   int size = 2;
   MatrixXd m = MatrixXd::Random(size,size);
