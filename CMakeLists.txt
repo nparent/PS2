@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8)
 project(Boost_vs_Eigen)
 set( EXECUTABLE_OUTPUT_PATH ${Boost_vs_Eigen_SOURCE_DIR}/bin )
 
-add_compile_options(-O3 -msse2)
+# add_compile_options(-O3 -msse2)
 
 ###### ADD EIGEN #####
 include(ExternalProject)

@@ -43,8 +43,8 @@ BOOST_AUTO_TEST_CASE(benchmarkMultiply) {
   int stop = 200;
   // plotfile creation
   ofstream plotfile, plotfile2;
-  Create_plotfile("tests/multiplyEigen_O3_msse2.dat", plotfile);
-  Create_plotfile("tests/multiplyBoost_O3_msse2.dat", plotfile2);
+  Create_plotfile("tests/multiplyEigen_4cpu.dat", plotfile);
+  Create_plotfile("tests/multiplyBoost_4cpu.dat", plotfile2);
   plotfile << "# size time" << endl << endl;
   plotfile2 << "# size time" << endl << endl;
 

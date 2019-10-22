@@ -8,9 +8,33 @@ plot  "./tests/multiplyBoost_none.dat" title "Boost multiply" with lines,\
       "./tests/multiplyBoost_03_msse2.dat" title "Boost multiply -03 -msse2" with lines
 
 
-
-set title "Eigen Matrix Multiply benchmark -g";\
+set title "Eigen Matrix Multiply benchmark";\
 set xlabel "Matrix size" font "Helvetica,20";\
 set ylabel "Time in nanosecond" font "Helvetica,20";\
-plot  "./tests/multiplyEigen_none.dat" title "Eigen multiply no option" with lines,\
-      "./tests/multiplyEigen_g.dat" title "Eigen multiply -g" with lines
+plot  "./tests/multiplyEigen_none.dat" title "Eigen multiply" with lines,\
+      "./tests/multiplyEigen_01.dat" title "Eigen multiply -01" with lines,\
+      "./tests/multiplyEigen_02.dat" title "Eigen multiply -02" with lines,\
+      "./tests/multiplyEigen_02_msse2.dat" title "Eigen multiply -02 -msse2" with lines,\
+      "./tests/multiplyEigen_03_msse2.dat" title "Eigen multiply -03 -msse2" with lines
+
+
+
+// matrix multiply
+set title "Eigen/Boost Matrix Multiply benchmark 1/4 cpu";\
+set xlabel "Matrix size" font "Helvetica,20";\
+set ylabel "Time in nanosecond" font "Helvetica,20";\
+plot  "./tests/multiplyEigen4cpu.dat" title "Eigen multiply 4cpu" with lines,\
+      "./tests/multiplyEigen_none.dat" title "Eigen multiply" with lines
+
+
+//cpu
+
+set title "Eigen Matrix Multiply benchmark";\
+set xlabel "Matrix size" font "Helvetica,20";\
+set ylabel "Time in nanosecond" font "Helvetica,20";\
+plot  "./tests/multiplyEigen_none.dat" title "Eigen multiply" with lines,\
+      "./tests/multiplyEigen_01.dat" title "Eigen multiply -01" with lines,\
+      "./tests/multiplyEigen_02.dat" title "Eigen multiply -02" with lines,\
+      "./tests/multiplyEigen_02_msse2.dat" title "Eigen multiply -02 -msse2" with lines,\
+      "./tests/multiplyEigen_03_msse2.dat" title "Eigen multiply -03 -msse2" with lines
+
