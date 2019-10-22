@@ -30,8 +30,9 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 #tests
 add_definitions (-DBOOST_TEST_DYN_LINK)
-add_subdirectory(tests)
 enable_testing()
+add_subdirectory(tests)
+add_test(NAME test_eigen3 COMMAND test)
 add_test(NAME test_eigen_Mxv COMMAND test_eigen_Mxv)
 add_test(NAME test_eigen_solve_system COMMAND test_eigen_solve_system)
 add_test(NAME test_boost_Mxv COMMAND test_boost_Mxv)

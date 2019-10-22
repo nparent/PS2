@@ -33,3 +33,15 @@ BOOST_AUTO_TEST_CASE(test_boost_Mxv)
   BOOST_CHECK_EQUAL(MxV(0,0),M(0,0));
   BOOST_CHECK_EQUAL(MxV(1,0),M(1,0));
 }
+
+
+void matrixMultiplyBoost(int size, int it = 10){
+    MatrixXd m = MatrixXd::Random(size,size);
+    MatrixXd v = MatrixXd::Zero(size,size);
+    // MatrixXd mxv(size,1);
+    matrix<double> MxV(size,size);
+    matrix<double> M = MatrixFromEigen(m);
+    matrix<double> V = MatrixFromEigen(v);
+  //
+    MxV = prod(M,V);
+}
