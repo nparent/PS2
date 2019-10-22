@@ -1,0 +1,1 @@
+set title "Matrix Multiply benchmark";set xlabel "Matrix size" font "Helvetica,20"; set ylabel "Time in nanosecond" font "Helvetica,20";plot  "./tests/multiplyBoost.dat" title "Boost multiply" with lines, "./tests/multiplyEigen.dat" title "Eigen multiply" with lines

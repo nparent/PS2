@@ -23,8 +23,12 @@ include( FindBoost )
 find_package( Boost
   COMPONENTS
     system filesystem unit_test_framework
+<<<<<<< HEAD
   REQUIRED
     timer signals
+=======
+  REQUIRED timer signals chrono
+>>>>>>> 8872b84d0cc02e81b2f613901ec72a5790feb5f5
 )
 include_directories(${Boost_INCLUDE_DIRS})
 
