@@ -8,6 +8,8 @@
 
 #include <boost/test/unit_test.hpp>
 #include <boost/timer/timer.hpp>
+#include <boost/chrono/chrono.hpp>
+
 
 #include "./test_eigen3.cpp"
 #include "./test_boost_Mxv.cpp"
@@ -35,66 +37,46 @@ void Create_plotfile(string path, ofstream &plotfile) {
   plotfile.clear();
 }
 
-BOOST_AUTO_TEST_CASE(benchmark) {
+BOOST_AUTO_TEST_CASE(benchmarkMultiply) {
 
   int mean = 10;
+  int step = 50;
+  int start = 50;
+  int stop = 500;
   // plotfile creation
-  ofstream plotfile;
-  Create_plotfile("tests/solveur.dat", plotfile);
-  plotfile.clear();
+  ofstream plotfile, plotfile2;
+  Create_plotfile("tests/multiplyEigen.dat", plotfile);
+  Create_plotfile("tests/multiplyBoost.dat", plotfile2);
   plotfile << "# size time" << endl << endl;
-
-  // profiling
-  // size loop
-  for( int i = 100; i < 500; i+=20){
-    // mean loop
-    cpu_timer t;  
-    for(int it = 0; it < mean; it++){
-      solver(i, 1);   
-    }
-    cpu_times times = t.elapsed() ;
-    cout << times.wall << endl;   
-    plotfile << i << " " << times.wall/mean << endl;
-  }
-  plotfile.close();
-
-    // plotfile creation
-  ofstream plotfile2;
-  Create_plotfile("tests/multiply.dat", plotfile2);
-  plotfile2.clear();
   plotfile2 << "# size time" << endl << endl;
 
   // profiling
   // size loop
-  for( int i = 100; i < 500; i+=20){
-    // mean loop
+  for( int size = start; size < stop; size+=step){
+    // Matrix creation 
+    MatrixXd r = MatrixXd::Random(size,size);
+    MatrixXd m = MatrixXd::Random(size,size);
+    MatrixXd v = MatrixXd::Random(size,size);
+    matrix<double> M = MatrixFromEigen(m);
+    matrix<double> V = MatrixFromEigen(v);
+    matrix<double> MxV(size,size);
+    // Eigen mean loop 
     cpu_timer t;  
     for(int it = 0; it < mean; it++){
-      matrixMultiply(i, 1);   
+       r = m*v;
     }
-    cpu_times times = t.elapsed() ;
-    cout << times.wall << endl;   
-    plotfile2 << i << " " << times.wall/mean << endl;
+    cout << "eigen : " << size << t.format() << endl;
+    plotfile << size << " " << t.elapsed().wall/mean << endl;
+
+    // Boost mean loop 
+    cpu_timer t2;  
+    for(int it = 0; it < mean; it++){
+       MxV = prod(M,V);
+    }
+    cout << "boost : " << size << t.format() << endl;
+    // cout << "boost : " << size << t2.elapsed().wall/mean << endl;
+    plotfile2 << size << " " << t2.elapsed().wall/mean << endl;
   }
+  plotfile.close();
   plotfile2.close();
-
-      // plotfile creation
-  ofstream plotfile3;
-  Create_plotfile("tests/multiplyBoost.dat", plotfile3);
-  plotfile3.clear();
-  plotfile3 << "# size time" << endl << endl;
-
-  // profiling
-  // size loop
-  for( int i = 100; i < 500; i+=20){
-    // mean loop
-    cpu_timer t;  
-    for(int it = 0; it < mean; it++){
-      matrixMultiplyBoost(i, 1);   
-    }
-    cpu_times times = t.elapsed() ;
-    cout << times.wall << endl;   
-    plotfile3 << i << " " << times.wall/mean << endl;
-  }
-  plotfile3.close();
-  }
+}
