@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 2.8)
 
 project(Boost_vs_Eigen)
 set( EXECUTABLE_OUTPUT_PATH ${Boost_vs_Eigen_SOURCE_DIR}/bin )
@@ -23,12 +23,7 @@ include( FindBoost )
 find_package( Boost
   COMPONENTS
     system filesystem unit_test_framework
-<<<<<<< HEAD
-  REQUIRED
-    timer signals
-=======
   REQUIRED timer signals chrono
->>>>>>> 8872b84d0cc02e81b2f613901ec72a5790feb5f5
 )
 include_directories(${Boost_INCLUDE_DIRS})
 
@@ -36,8 +31,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 add_definitions (-DBOOST_TEST_DYN_LINK)
 enable_testing()
 add_subdirectory(tests)
-add_test(NAME test_eigen3 COMMAND test)
 add_test(NAME test_eigen_Mxv COMMAND test_eigen_Mxv)
 add_test(NAME test_eigen_solve_system COMMAND test_eigen_solve_system)
 add_test(NAME test_boost_Mxv COMMAND test_boost_Mxv)
-# add_test(NAME test_boost_solve_system COMMAND test_boost_solve_system)
+add_test(NAME test_boost_solve_system COMMAND test_boost_solve_system)

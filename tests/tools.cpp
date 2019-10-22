@@ -8,7 +8,6 @@
 #include <boost/numeric/ublas/matrix.hpp>
 #include <boost/numeric/ublas/io.hpp>
 
-
 using namespace std;
 using namespace Eigen;
 using namespace boost::numeric::ublas;
@@ -41,18 +40,19 @@ matrix<double> MatrixFromEigen(MatrixXd M)
   return m;
 }
 
-// vector<double> VectorFromEigen(MatrixXd V)
-// {
-//   int n_rows = V.rows();
-//   boost::numeric::ublas::vector<double> v(n_rows);
-//   for (std::size_t row=0; row!=n_rows; ++row)
-//   {
-//     for (std::size_t col=0; col!=n_cols; ++col)
-//     {
-//       m(row,col) = M(row,col);
-//     }
-//   }
-//   return m;
-// }
+MatrixXd MatrixFromBoost(matrix<double> m)
+{
+int n_rows = m.size1();
+int n_cols = m.size2();
+MatrixXd M(n_rows,n_cols);
+for (std::size_t row=0; row!=n_rows; ++row)
+{
+  for (std::size_t col=0; col!=n_cols; ++col)
+  {
+    M(row,col) = m(row,col);
+  }
+}
+return M;
+}
 
 #endif
