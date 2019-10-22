@@ -10,8 +10,6 @@
 #include <boost/timer/timer.hpp>
 #include <boost/chrono/chrono.hpp>
 
-
-#include "./test_eigen3.cpp"
 #include "./test_boost_Mxv.cpp"
 
 using namespace std;
@@ -53,23 +51,23 @@ BOOST_AUTO_TEST_CASE(benchmarkMultiply) {
   // profiling
   // size loop
   for( int size = start; size < stop; size+=step){
-    // Matrix creation 
+    // Matrix creation
     MatrixXd r = MatrixXd::Random(size,size);
     MatrixXd m = MatrixXd::Random(size,size);
     MatrixXd v = MatrixXd::Random(size,size);
     matrix<double> M = MatrixFromEigen(m);
     matrix<double> V = MatrixFromEigen(v);
     matrix<double> MxV(size,size);
-    // Eigen mean loop 
-    cpu_timer t;  
+    // Eigen mean loop
+    cpu_timer t;
     for(int it = 0; it < mean; it++){
        r = m*v;
     }
     cout << "eigen : " << size << t.format() << endl;
     plotfile << size << " " << t.elapsed().wall/mean << endl;
 
-    // Boost mean loop 
-    cpu_timer t2;  
+    // Boost mean loop
+    cpu_timer t2;
     for(int it = 0; it < mean; it++){
        MxV = prod(M,V);
     }
