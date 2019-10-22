@@ -1,6 +1,9 @@
-create a build directory 
-run : 
+create a build directory and run :
+
 cmake ..
+
 make
-make test 
+
+make test
+
 ./../bin/name_of_our_executable
