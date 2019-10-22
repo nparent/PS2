@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 2.8)
 
 project(Boost_vs_Eigen)
 set( EXECUTABLE_OUTPUT_PATH ${Boost_vs_Eigen_SOURCE_DIR}/bin )
 
-add_compile_options(-g -O2)
+add_compile_options(-O3 -msse2)
 
 ###### ADD EIGEN #####
 include(ExternalProject)
@@ -23,12 +23,8 @@ include( FindBoost )
 find_package( Boost
   COMPONENTS
     system filesystem unit_test_framework
-<<<<<<< HEAD
   REQUIRED
     timer signals
-=======
-  REQUIRED timer signals chrono
->>>>>>> 8872b84d0cc02e81b2f613901ec72a5790feb5f5
 )
 include_directories(${Boost_INCLUDE_DIRS})
 

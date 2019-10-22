@@ -40,13 +40,13 @@ void Create_plotfile(string path, ofstream &plotfile) {
 BOOST_AUTO_TEST_CASE(benchmarkMultiply) {
 
   int mean = 10;
-  int step = 50;
-  int start = 50;
-  int stop = 500;
+  int step = 10;
+  int start = 10;
+  int stop = 200;
   // plotfile creation
   ofstream plotfile, plotfile2;
-  Create_plotfile("tests/multiplyEigen.dat", plotfile);
-  Create_plotfile("tests/multiplyBoost.dat", plotfile2);
+  Create_plotfile("tests/multiplyEigen_O3_msse2.dat", plotfile);
+  Create_plotfile("tests/multiplyBoost_O3_msse2.dat", plotfile2);
   plotfile << "# size time" << endl << endl;
   plotfile2 << "# size time" << endl << endl;
 
