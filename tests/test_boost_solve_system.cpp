@@ -26,6 +26,7 @@ BOOST_AUTO_TEST_CASE(test_boost_solve_system)
   matrix<double> Y = MatrixFromEigen(y);
   matrix<double> MxX(size, 1);
 
+  ////////////////// this does not give the solution //////////////////
   permutation_matrix<> pm(M.size1());
   lu_factorize(M, pm);
   lu_substitute(M, pm, X);
