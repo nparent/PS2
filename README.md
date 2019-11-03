@@ -1,4 +1,4 @@
-create a build directory and run :
+create a build directory and run in command line :
 
 cmake ..
 

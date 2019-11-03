@@ -8,20 +8,6 @@
 using namespace std;
 using namespace Eigen;
 
-// int main(int argc, char const *argv[]) {
-//
-//   cout<<"\n hello world"<<endl;
-//   MatrixXd M;
-//   M = MatrixXd::Random(2,2);
-//   cout<<M*M<<endl;
-//   MatrixXd a = MatrixXd::Random(2,2);
-//   MatrixXd b = MatrixXd::Zero(2,1);
-//   MatrixXd c(2,1);
-//   c = a*b;
-//   cout<<"\n product of matrices  a and b \n "<<c(0,0)<<endl;
-//   return 0;
-// }
-
 BOOST_AUTO_TEST_CASE(first_column)
 {
   MatrixXd a = MatrixXd::Random(2,2);

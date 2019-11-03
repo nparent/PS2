@@ -1,0 +1,163 @@
+\usepackage{float} 
+
+
+\section{Introduction}
+In this practical session we implement tests and performance profiles for boost and eigen3, two linear algebra \textbf{c++} libraries. 
+The latter aims at comparing performances of the two libraries, we do it for matrix multiplication operation.
+The former aims at ensuring that the implemented functions of the two libraries are actually executing what we expect from them.
+For the compilation of such a project, we will use the build system \textbf{CMake}.
+
+\section{Compilation and tests with \textbf{CMake}}
+\emph{We highly recommand the reader to go through the CMakeLists.txt files of our project to get a clearer idea : \\ 
+PS2/CMakeLists.txt \\
+PS2/tests/CMakeLists.txt}.
+
+The source we used to learn more about \textbf{CMake} is \cite{ess}.
+In order to facilitate the "compilation" of our project we use the build system \textbf{CMake}. It permits an easy management of dependencies, include directories, and link editions. It also permits to drive tests.
+
+In order to create an executable \textbf{exe}, from some sources we simply gives the list of sources as such :
+\begin{lstlisting}[language=make, caption=executable creation]
+add_executable( exe source1.cpp source1.h source2.cpp source2.h main.cpp)
+#second option is to define a variable that contains all sources
+set(sources source1.cpp source1.h source2.cpp source2.h main.cpp)
+add_executable( exe \${sources})
+#third option is to give the path to the headers (relatively to CMAKE_SOURCE_DIR i.e. where the CMakeLists.txt is) like this :
+add_executable( exe source1.cpp source2.cpp)
+target_include_directories( exe PRIVATE path_to_headers )
+#PRIVATE means only this target, PUBLIC could be used to transmit it to transmit it to dependencies or use 
+include_directories(path_to_headers)
+\end{lstlisting}
+
+The link edition with (non-standard) libraries is then managed with 
+\begin{lstlisting}[language=make, caption=executable creation]
+target_link_libraries( exe \${libraries_to_link} )
+#where libraries_to_link is a variable that contains libraries you want to link
+#what is usually done with -l{library} and -L{path_to_library}
+\end{lstlisting}
+
+In the case of the \textbf{Boost} libraries, the linking is eased with the \textbf{CMake module FindBoost} 
+\begin{lstlisting}{language=make, caption=Boost Library}
+include( FindBoost )
+find_package( Boost
+  COMPONENTS
+    system filesystem unit_test_framework
+  REQUIRED
+    timer signals
+)
+#then FindBoost automatically fills some variables relative to Boost :
+# Boost_LIBRARIES,  Boost_INCLUDE_DIRS etc ...
+\end{lstlisting}
+
+In the case of \textbf{Eigen3} library, it is added as an external project. Since Eigen is a "header-only" library, we only need its directory with the  \textbf{include\_directories} command.
+\begin{lstlisting}{language=make, caption=External Project}
+include(ExternalProject)
+ExternalProject_Add(
+  Eigen
+#we suppose here that your project is named TP
+#Library Eigen3 is stored in the sub - folder eigen
+  SOURCE_DIR  \${Boost_vs_Eigen_SOURCE_DIR}/eigen
+  INSTALL_COMMAND echo " Skipping install "
+)
+include_directories( \${Boost_vs_Eigen_SOURCE_DIR}/eigen )
+\end{lstlisting}
+
+Finally, we add test with the following commands 
+\begin{lstlisting}{language=make, caption=test addition}
+enable_testing()
+add_test(NAME name_of_test COMMAND executable_name [argv[1] ...] )
+\end{lstlisting}
+
+\section{Unit tests}
+
+\emph{see code part : PS2/tests for all test files}
+
+In order to ensure that the libraries we implement or use gives right results, we use tests. 
+To do them, we use as explained aforehead \textbf{CMake} and Boost.test.
+For instance we write : 
+\begin{lstlisting}{language=C++, caption=Boost test}
+BOOST_AUTO_TEST_CASE(first_column)
+{
+  MatrixXd a = MatrixXd::Random(2,2);
+  MatrixXd b = MatrixXd::Zero(2,1);
+  MatrixXd c(2,1);
+  c = a*b;
+  BOOST_CHECK_EQUAL(c(0,0), 0);
+  b(0,0)=1;
+  // first column
+  c = a*b;
+  BOOST_CHECK_EQUAL(a(0,0),c(0,0));
+  BOOST_CHECK_EQUAL(a(1,0),c(1,0));
+}
+\end{lstlisting}
+This tests on a very simple example, that the result of a matrix multiplication is right.
+
+\section{Performance profiles}
+    For square matrices $A,B$ of size $n$, we compute the time needed to process the matrix product $A \times B$. For Boost and Eigen3, we respectively denote it $time\_boost(n)$  and $time\_eigen(n)$. 
+    Note that those times can be seen as random variables, but it happens that those times are quite steady if we repeat the computation $A \times B$ for many $A,B$ random matrices of given size. Anyway, we have averaged those times on a few repetition of the operation.
+    
+    We also modify the compile options thanks to the following \textbf{CMake} command
+    \begin{lstlisting}{language = make, caption = compilation options}
+    add_compile_options( options )
+    # or to use it only on one executable (and its dependencies if PUBLIC)
+    target_compile_options(target_name PRIVATE options )
+    \end{lstlisting}
+    where options are taken among :
+    
+    \begin{itemize}
+        \item -g 
+        \item -O0 : no optimization
+        \item -O1 : speed up
+        \item -O2 : O1 + loop unrolling
+        \item -O3 : transform loops + memory access speed up
+    \end{itemize}
+    Let's start be comparing the performance without compilation optimisation of both library.
+    The following graph is the result of our matrix multiplication benchmark in function of matrix sizes.
+    \newline
+    \hspace{2cm}
+    
+    
+    \begin{figure}[h]
+        \includegraphics[width=\linewidth]{benchmark_multiply.png}
+        \caption{Matrix multiply benchmark with no compile options }
+        \label{Matrix multiply benchmark}
+    \end{figure}
+
+    One can graphicaly see that Eigen performance is a lot better than Boost about matrix multiplication, even with a small matrix size. This is shown here with no compile options but has also been checked with the aforehead mentionned options.
+    
+    \newpage
+    Now let's see what is the effect of the different compile options one both library with \ref{Eigen Matrix multiply benchmark} and \ref{Boost Matrix multiply benchmark}
+  \begin{figure}[h]
+    \includegraphics[width=442px]{benchmark_eigen_compilation_option.png}
+    \caption{Eigen Matrix multiply benchmark with different compilation options}
+    \label{Eigen Matrix multiply benchmark}
+  \end{figure}
+  
+  \begin{figure}[h!]
+    \includegraphics[width=442px]{benchmark_Boost_compilation_option.png}
+    \caption{Boost Matrix multiply benchmark with different compilation options}
+    \label{Boost Matrix multiply benchmark}
+  \end{figure}
+  
+  
+  
+    One can observe for both library a great performance improvement between without (red line) or with (other color lines) compile options. But the performance gain over all different levels of optimisation during compilation seems negligible. Note also that the compilation optimisation give much better result for Eigen than for Boost.
+    The choice of doing further optimisations during compilation is a trade-off. The higher the optimisation level is, the slower will be the compilation, but the faster will be the execution. 
+    
+\hspace{20px}
+    
+    Now we will be interested in affecting multiple cpu to the matrix multiplication task. Our lab computer have 4 cpu, so we will affect 4 cpu to the multiplication task. We do this using the command 'taskset -c 0,1,2,3 ./matrixMultiplication'. In figure \ref{cpu} we find performance comparison using 1 or 4 on the eigen matrix multiplication. Notice that for this plot we have used the "-O3 -msse2" compile options for both curve.
+
+    \begin{figure}[h!]
+    \includegraphics[width=\linewidth]{benchmark_eigen_cpu.png}
+    \caption{Eigen Matrix multiply benchmark using 1 and 4 cpu}
+    \label{cpu}
+    \end{figure}
+    One can notice that the time improvement of the 4 cpu affectation is very low for this example. It's maybe due to the fact that the eigen matrix multiplication is not parallelised. Therefore one single thread doing the computation on one cpu. So there is no point to affect more than one cpu to this task. 
+    
+\newpage
+
+\section{Conclusion}
+This practical gave us the chance to improve our knowledge on \textbf{CMake} and see how it facilitates the compilation and linking process by creating a Makefile for us.
+In the comparison of the two libraries, Eigen clearly surpass Boost. More important is the effect of the compile options, which at the cost of a slightly longer compilation, brings huge improvement in the matrix multiplication operations.
+A continuation track would be to compare the performance of the two libraries to solve linear systems (at least in mean square).
+
